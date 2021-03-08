@@ -1,9 +1,9 @@
 <?php
     //php specific for this page
     $thispage = 'About';
-    include 'inc\header.php';
+    require('inc/header.php');
 ?>
 
 
 
-<?php include 'inc\footer.php'; ?>
+<?php require('inc/footer.php'); ?>
