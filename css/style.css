@@ -1,3 +1,6 @@
+
+
+
 :root{
     --trader_color:#FF558F;
     --fast_color: #0237CC;
@@ -45,6 +48,14 @@
 #current_price_area{
     padding: 1rem;
 }
+#social_links{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.tsw_button{
+    padding:0.5rem;
+}
 #current_price_cards{
     padding:1rem;
     display:grid;
@@ -83,6 +94,9 @@
     display:grid;
     grid-template-columns:1fr 2fr 2fr 2fr 2fr 2fr 1fr;
     gap:2rem;
+}
+#bet_buttons_mobile{
+    display:none;
 }
 #results_area{ 
     height:14rem;
@@ -239,3 +253,96 @@ display: block;
     font-weight: bold;
 }
 /* Popup box BEGIN */
+
+/* Media Queries: Tablet*/
+@media screen and (max-width: 1200px) {
+    body{
+        margin:0;
+        padding:0;
+    }
+    #bet_buttons{
+        grid-template-columns:0px 2fr 2fr 2fr 2fr 2fr 0px;
+        gap:0.5rem;
+    }
+    #site_title h1{
+        font-size:6rem;
+    }
+    #results_area{ 
+        height:100%;
+        margin-top:1rem;
+        margin-bottom:1rem;
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:2fr 1fr 2fr;
+        gap:0.5rem;
+    }
+    .map_link{
+        padding:0.2rem;
+    }
+}
+
+/* Media Queries: Mobile*/
+@media only screen and (max-width: 768px) {
+    body{
+        margin:0;
+        padding:0;
+    }
+    .hide_on_mobile{
+        display:none
+    }
+    /*site header*/
+    #site_header{
+        display:grid;
+        grid-template-columns:1fr;
+    }
+    #settings_panel{
+        padding:0;
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+    }
+    .setting_icon{
+        width:4rem;
+        padding:0.5rem;
+        text-align:center;
+        cursor:pointer;
+    }
+    #site_title h1{
+        font-size:6rem;
+    }
+
+    #current_price_cards{
+        padding:0.5rem;
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:1fr 1fr 1fr;
+        gap:0.5rem;
+    }
+    #bet_buttons{
+        display:none;
+    }
+    #bet_buttons_mobile{
+        display:grid;
+    }
+    #mobile_bet_buttons{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:0.5rem;
+    }
+
+    #results_area{ 
+        height:100%;
+        margin-top:2rem;
+        margin-bottom:0;
+        display:grid;
+        grid-template-columns:1fr;
+        gap:0.5rem;
+    }
+    #site_map{
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:1fr 1fr 1fr;
+    }
+    .map_link{
+        padding:0.2rem;
+    }
+}

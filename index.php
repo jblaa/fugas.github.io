@@ -12,10 +12,15 @@
     <div class="container">
         <!--social links-->
         <div id="social_links">
-            <i class="social_icon fas fa-bars fa-2x"></i>
-            <a href="https://twitter.com/ethgasstation" target="_blank"><i style="color:#55acee;" class="bright_when_hover social_icon fab fa-twitter fa-2x"></i></a>
-            <a href="https://discord.gg/mzDxADE" target="_blank"><i style="color:#7289da;" class="bright_when_hover social_icon fab fa-discord fa-2x"></i></a>
-            <a href="https://t.me/FUGASofficial" target="_blank"><i style="color:#0088CC;" class="bright_when_hover social_icon fab fa-telegram fa-2x"></i></a>
+            <div class="">
+                <i class="social_icon fas fa-bars fa-2x"></i>
+                <a href="https://twitter.com/ethgasstation" target="_blank"><i style="color:#55acee;" class="bright_when_hover social_icon fab fa-twitter fa-2x"></i></a>
+                <a href="https://discord.gg/mzDxADE" target="_blank"><i style="color:#7289da;" class="bright_when_hover social_icon fab fa-discord fa-2x"></i></a>
+                <a href="https://t.me/FUGASofficial" target="_blank"><i style="color:#0088CC;" class="bright_when_hover social_icon fab fa-telegram fa-2x"></i></a>
+            </div>
+            <div class="tsw_button">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIHn-bARU9Lw_nou6gud2NxeGAOOZ-Q3tvpTAOxiJgeQwMpg/viewform" target="_blank"><button type="button" class="btn btn-primary btn-lg">Token Sale Whitelist</button></a>
+            </div>
         </div>
         <!--current price cards-->
         <div class="container jumbotron" id="current_price_area">
@@ -41,6 +46,7 @@
     </div>  
     <!--bet area-->
     <div class="container" >
+        <!-- PC and tablet screens-->
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="bet_buttons">
             <div class=""></div>
             <input type="submit" id="bet_up" name="bet_up" value="Bet Up" class="<?php if(($_SESSION['mode'] == 0)) {echo 'pulse';}; ?> btn btn-secondary btn-lg bet_button btn-success
@@ -79,6 +85,45 @@
                 ?>" <?php if(($_SESSION['mode'] != 0)) {echo 'disabled';}; ?>>
             <div class=""></div>
         </form>
+        <!--mobile screens-->
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="bet_buttons_mobile">
+            <div class="form-group bet_input">
+                <label>Gas Type</label>    
+                <select class="custom-select" name="bet_gas_type" required <?php if(($_SESSION['mode'] != 0)) {echo 'disabled';}; ?>>
+                    <option value="trader">TRADER</option>
+                    <option selected="fast">FAST</option>
+                    <option value="standard">STANDARD</option>
+                </select>
+            </div>
+            <div class="form-group bet_input">
+                <label>Bet Amount **</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" class="form-control" id="bet-amount" name="bet_amount" aria-label="Amount (to the nearest dollar)" autofocus required <?php if(($_SESSION['mode'] != 0)) {echo 'disabled';}; ?> max="<?php echo ($_SESSION['balance'] / (1 + $bet_fee_percentage)); ?>">
+                </div>
+            </div>
+            <div class="form-group bet_input">
+                <label>Over How Long?</label>
+                <select class="custom-select" name="bet_length" required <?php if(($_SESSION['mode'] != 0)) {echo 'disabled';}; ?>>
+                    <option value="60">One Minute</option>
+                    <option value="300">Five Minutes</option>
+                    <option value="3600">One Hour</option>
+                </select>
+            </div>
+            <div id="mobile_bet_buttons">
+                <input type="submit" id="bet_up" name="bet_up" value="Bet Up" class="<?php if(($_SESSION['mode'] == 0)) {echo 'pulse';}; ?> btn btn-secondary btn-lg bet_button btn-success
+                    <?php
+                        if(($_SESSION['mode']) == 0 && ($_SESSION['theme'] == 0)){echo 'pulse_light';} elseif (($_SESSION['mode']) == 0 && ($_SESSION['theme'] == 1)) {echo 'pulse_dark';}
+                    ?>
+                " <?php if(($_SESSION['mode'] != 0)) {echo 'disabled';}; ?>>
+                <input type="submit" id="bet_down" name="bet_down" value="Bet Down" class="btn btn-secondary btn-lg bet_button btn-danger 
+                    <?php
+                        if(($_SESSION['mode']) == 0 && ($_SESSION['theme'] == 0)){echo 'pulse_light';} elseif (($_SESSION['mode']) == 0 && ($_SESSION['theme'] == 1)) {echo 'pulse_dark';}
+                    ?>" <?php if(($_SESSION['mode'] != 0)) {echo 'disabled';}; ?>>
+            </div>
+        </form>
     </div>
     <!--results area-->
     <div class="container" id="results_area">
@@ -99,7 +144,7 @@
                 " name="game_reset" <?php if(($_SESSION['mode'] != 2)) {echo 'disabled';}; ?>>Start A New Game</button>
             </form>
         </div>
-        <div id="results_right">
+        <div id="results_right" class="hide_on_mobile">
             <form method="post" id="choose_stats" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <button value="0" type="submit" name="stat" class="<?php if($_POST['stat'] == 0) {echo 'btn-info';} else {echo 'btn-primary';}; ?> stat_tab fas fa-question-circle fa-2x"></button>
                 <button value="1" type="submit" name="stat" class="<?php if($_POST['stat'] == 1) {echo 'btn-info';} else {echo 'btn-primary';}; ?> stat_tab far fa-chart-bar fa-2x"></button>

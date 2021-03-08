@@ -16,7 +16,7 @@
             <a href="https://t.me/FUGASofficial" target="_blank"><i style="color:#0088CC;" class="bright_when_hover social_icon fab fa-telegram"></i></a>
         </div>
     </div>
-    <!--pop up area-->
+    <!--pop up area-
     <a class="trigger_popup_fricc">Click here to show the popup</a>
     <div class="hover_bkgr_fricc">
         <span class="helper"></span>
@@ -28,7 +28,7 @@
             <div class="push_popup popupCloseButton">&times;</div>
             <img class ="push_image <?php if ($_SESSION['theme'] == 1) {echo 'inverted';};?>" src="img\push.png" alt="push_image">
         </div>
-    </div>
+    </div>-->
     <script type="text/javascript" src="main.js"></script>
     <!--TIMER-->
         <script type="text/javascript">

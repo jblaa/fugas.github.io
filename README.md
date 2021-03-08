@@ -4,15 +4,13 @@
 
 ### v0.1 (05 Mar 2021)
 
-Trial release
+1. trial release
 
 ### v0.2 (08 Mar 2021)
 
 1. responsive layout for mobile and tablets
 
 2. game over pop-up added
-
-3. updated game stat box (js instead of php)
 
 ### v0.3 (TBD)
 
@@ -23,6 +21,8 @@ Trial release
 3. add chat window
 
 4. add content to about page
+
+5. updated game stat box (js instead of php)
 
 ## Files:
 

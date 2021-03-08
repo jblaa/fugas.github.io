@@ -198,8 +198,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
     <title>F U GAS | <?php echo $thispage; ?></title>
     <!--stylesheet determined based on $display_mode variable in config/stylesheet.php-->
     <link rel="stylesheet" href="<?php echo $theme_address; ?>">
@@ -232,6 +233,6 @@
         <div class="container" id="site_timer">
             <p>game time remaining:</p>
             <h2 id="timer">00:00:00</h2><br>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIHn-bARU9Lw_nou6gud2NxeGAOOZ-Q3tvpTAOxiJgeQwMpg/viewform" target="_blank"><button type="button" class="btn btn-primary btn-lg">Token Sale Whitelist</button></a>
+
         </div>
     </div>
