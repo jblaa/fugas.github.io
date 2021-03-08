@@ -1,6 +1,6 @@
 <?php
     ##GLOBAL VALUES
-        $version = 'v0.1';
+        $version = 'v0.2';
         $themes = ['https://bootswatch.com/4/cerulean/bootstrap.min.css', 'https://bootswatch.com/4/cyborg/bootstrap.min.css']; //0=light, 1=dark
         $modes = ['ready to start', 'in progress', 'game over']; //game modes: 0 = READY TO START, 1 = IN PROGRESS, 2 = GAME OVER
         $gas_api_url = 'https://ethgasstation.info/api/ethgasAPI.json';

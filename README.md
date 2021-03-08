@@ -24,6 +24,8 @@
 
 5. updated game stat box (js instead of php)
 
+6. bug fix: game status error on page request after game over
+
 ## Files:
 
 ### \config\config.php

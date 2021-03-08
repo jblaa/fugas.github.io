@@ -1,7 +1,7 @@
 <?php
     ##php specific for this page
     $thispage = 'Home';
-    include 'inc\header.php';
+    require('inc/header.php');
 
     ##check if there is a stat panel active and if not set to first panel
         if(!isset($_POST['stat'])){
@@ -129,7 +129,7 @@
     <div class="container" id="results_area">
         <div id="results_left">
             <div id="game_script">
-                <?php include 'inc\game_script.php'; ?>
+                <?php require('inc/game_script.php'); ?>
             </div>
         </div>
         <div class="container" id="results_center">
@@ -151,9 +151,9 @@
                 <button value="2" type="submit" name="stat" class="<?php if($_POST['stat'] == 2) {echo 'btn-info';} else {echo 'btn-primary';}; ?> stat_tab fab fa-bitcoin fa-2x"></button>
             </form>
             <div id="game_stats">
-                <?php include 'inc\game_stats.php'; ?>
+                <?php require('inc/game_stats.php'); ?>
             </div>
         </div>
     </div>
 
-<?php include 'inc\footer.php'; ?>
+<?php require('inc/footer.php'); ?>
