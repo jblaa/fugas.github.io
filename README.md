@@ -42,6 +42,8 @@ game_script.php - cases for the left part of the results area in index.php
 
 game_stats.php - cases for the right part of the results area in index.php
 
+game_over.php - determines the game over pop up image
+
 ### \
 
 index.php - main game (price area, place bet area, results area)

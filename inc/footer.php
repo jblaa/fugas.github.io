@@ -16,19 +16,14 @@
             <a href="https://t.me/FUGASofficial" target="_blank"><i style="color:#0088CC;" class="bright_when_hover social_icon fab fa-telegram"></i></a>
         </div>
     </div>
-    <!--pop up area-
-    <a class="trigger_popup_fricc">Click here to show the popup</a>
-    <div class="hover_bkgr_fricc">
-        <span class="helper"></span>
-        <div>
-            <div class="win_popup popupCloseButton">&times;</div>
-            <img class ="win_image <?php if ($_SESSION['theme'] == 1) {echo 'inverted';};?>" src="img\win.png" alt="win_image">
-            <div class="lose_popup popupCloseButton">&times;</div>
-            <img class ="lose_image <?php if ($_SESSION['theme'] == 1) {echo 'inverted';};?>" src="img\lose.png" alt="lose_image">
-            <div class="push_popup popupCloseButton">&times;</div>
-            <img class ="push_image <?php if ($_SESSION['theme'] == 1) {echo 'inverted';};?>" src="img\push.png" alt="push_image">
+    <!--pop up area-->
+    <!--<button id="myBtn">Open Modal</button>-->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close"><img src="<?php require('inc/game_over.php');?>" alt="<?php require('inc/game_over.php');?>" class="<?php if($_SESSION['theme'] == 1) {echo 'inverted';};?>"></span>
         </div>
-    </div>-->
+    </div>
     <script type="text/javascript" src="main.js"></script>
     <!--TIMER-->
         <script type="text/javascript">
@@ -85,21 +80,29 @@
         </script>
 
     <!--GAME RESULT POP UP-->
-        <script type="text/javascript">
-            //if game mode = 2, trigger pop up
-            //check to see if pop up has already been triggered this game, and if so don't pop up
-            $(window).load(function () {
-                
-                $(".trigger_popup_fricc").click(function(){
-                    $('.hover_bkgr_fricc').show();
-                });
-                $('.hover_bkgr_fricc').click(function(){
-                    $('.hover_bkgr_fricc').hide();
-                });
-                $('.popupCloseButton').click(function(){
-                    $('.hover_bkgr_fricc').hide();
-                });
-            });
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the game is over, open the modal
+            if(<?php echo $_SESSION['mode'];?> == 2) {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
         </script>
 </body>
 </html>

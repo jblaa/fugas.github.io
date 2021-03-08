@@ -19,7 +19,8 @@
 
     ##CHECK RESET
         if(isset($_POST['game_reset'])){
-            $_SESSION['mode'] = 0; //change from READY to IN PROGRESS
+            $_SESSION['mode'] = 0; //set to READY
+            $_SESSION['result'] = 'clear'; //clear the previous result from win/lose/push
         }
 
     ##GET LATEST GAS API VALUES
@@ -199,7 +200,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="HandheldFriendly" content="true">
     <title>F U GAS | <?php echo $thispage; ?></title>
     <!--stylesheet determined based on $display_mode variable in config/stylesheet.php-->
