@@ -16,7 +16,7 @@
 
 1. games based on global timer
 
-2. inclusion of user database. includes login and account pages
+2. inclusion of user database. includes login, signup, logout and account pages
 
 3. add chat window
 

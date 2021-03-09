@@ -260,9 +260,10 @@ display: block;
     #settings_panel{
         padding:0;
         display:grid;
-        grid-template-columns:1fr 1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+        text-align:center;
     }
-    .setting_icon{
+    .setting_icon, .dropdown{
         width:4rem;
         padding:0.5rem;
         text-align:center;

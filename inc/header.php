@@ -1,6 +1,10 @@
 <?php
     require('config/config.php');
+    require('config/connection.php');
+    require('config/functions.php');
+
     session_start(); //start the session
+    //$user_data = check_login($con);// we create this
 
     ##LIGHT/DARK MODE TOGGLE
         //check if theme has been set and if not set it light
@@ -13,6 +17,17 @@
         }
         //set the theme to display based on session thenme
         $theme_address = $themes[$_SESSION['theme']];
+
+    ##LOGIN BUTTON PRESS
+        //check to see if user panel button was pressed
+        if(isset($_POST['toggle_user_panel'])){
+            if($_SESSION['logged_in'] == 1){
+                header('Location: account.php');
+            } else {
+                header('Location: login.php');
+            };
+        };
+
 
     ##INITIATE GAME MODE IF NEEDED
         if(!isset($_SESSION['mode'])){ $_SESSION['mode'] = 0; }
@@ -222,7 +237,7 @@
                     <a class="map_link" href="https://forms.gle/edoMkWkzDX4SJ96cA" target="_blank">Report a Bug</a>
                 </div>
             </div>
-            <!--<button type="submit" name="toggle_user_panel" value="" class="danger_when_hover setting_icon fas fa-user fa-2x btn" disabled></button>-->
+            <button type="submit" name="toggle_user_panel" value="" class="bright_when_hover setting_icon fas fa-user fa-2x btn"></button>
             <button type="submit" name="toggle_theme" value="" class="bright_when_hover setting_icon fas fa-moon fa-2x btn"></button>
             <button type="submit" name="toggle_sound" value="" class="danger_when_hover setting_icon fas fa-bullhorn fa-2x btn" disabled></button>
         </form>
