@@ -12,7 +12,7 @@
 
 2. game over pop-up added
 
-### v0.3 (TBD)
+### v0.3 (--TBD--)
 
 1. games based on global timer
 
